@@ -1,0 +1,14 @@
+from datetime import datetime
+
+
+def get_days_from_today(date):
+    current_date = datetime.today() # Поточна дата
+    return current_date.toordinal() - date.toordinal() # Розрахунок кількості днів
+    
+    
+date_string1 = input("Input the date:")
+date_string = "2022.02.24"  # Припустимо, у нас є дата у вигляді рядка
+datetime_object = datetime.strptime(date_string1, "%Y.%m.%d") # Перетворення рядка в об'єкт datetime
+print(datetime_object)  # Виведе об'єкт datetime, що відповідає вказаній даті та часу
+
+print(get_days_from_today(datetime_object ))
