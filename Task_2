@@ -1,0 +1,14 @@
+import random  #Імпортуємо модуль випадкових чисел
+
+
+def get_numbers_ticket(a, b, c):  # Визначаєм функцію з трьома параметрами
+    numbers = []  # Створюємо пустий список для зберігання номерів
+    for i in range(a, b+1, 1):  # Запускаємо цикл для генерації чисел
+        numbers.append(i)  # добавляєм число в список 
+    lnumbers = random.sample(numbers, c)  # берем  с кількість унікальних чисел 
+    lnumbers.sort()  # сортуємо числа
+    return  lnumbers  # повертаємо відсортовані числа
+
+
+lottery_numbers = get_numbers_ticket(1, 49, 6)  # викликаємо функцію
+print("Ваші лотерейні числа:", lottery_numbers)  # Виводимо лотерейні числа на екран
