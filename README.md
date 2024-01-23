@@ -1,1 +1,1 @@
-# homework3_python_core
+# goit-algo-hw-03
