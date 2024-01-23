@@ -1,18 +1,18 @@
-import re
+import re  # імпортуєм модуль з регулярними виразами
 
 
-def normalize_phone(num):
-    pattern = r"\d+"
-    matches = re.findall(pattern, num)
-    numbers = "".join(matches)
-    if len(numbers) == 12:
-        numbers = "+" + numbers
-    elif len(numbers) == 10:
-        numbers = "+38" + numbers
-    return numbers
+def normalize_phone(num):  # визначаєм функцію по форматуванню номерів телефону
+    pattern = r"\d+"  # визначаєм шаблон для витягування цифр з рядка
+    matches = re.findall(pattern, num)  # знаходи цифри в рядку
+    numbers = "".join(matches)  # з'єднуєм
+    if len(numbers) == 12:  # якщо в номері не хватає плюса
+        numbers = "+" + numbers  # добавляєм плюс за допомогою конкатенації
+    elif len(numbers) == 10:  # якщо в номері не хватає +38
+        numbers = "+38" + numbers  # добавляєм +38 за допомогою конкатенації
+    return numbers  # повертає відформатований номер телефону
 
 
-raw_numbers = [
+raw_numbers = [    # список номерів для обробки
     "067\\t123 4567",
     "(095) 234-5678\\n",
     "+380 44 123 4567",
@@ -24,5 +24,5 @@ raw_numbers = [
     "38050 111 22 11   ",
 ]
 
-sanitized_numbers = [normalize_phone(num) for num in raw_numbers]
-print("Нормалізовані номери телефонів для SMS-розсилки:", sanitized_numbers)
+sanitized_numbers = [normalize_phone(num) for num in raw_numbers]  # викликаєм функцію обробки номерів для кожного по порядку
+print("Нормалізовані номери телефонів для SMS-розсилки:", sanitized_numbers)  # виводим на дисплей оброблені номера
