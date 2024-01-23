@@ -1,4 +1,4 @@
-from datetime import datetime
+from datetime import datetime #Імпортуємо модуль datetime
 
 
 def get_days_from_today(date): # Визначаєм функцію яка розраховує кількість днів між заданою датою і поточною датою.
@@ -7,4 +7,4 @@ def get_days_from_today(date): # Визначаєм функцію яка роз
     
 date_string1 = input("Введіть дату у форматі 'РРРР-ММ-ДД' (наприклад, '2020-10-09')")  # Зчитуємо дату у вигляді рядка
 datetime_object = datetime.strptime(date_string1, "%Y-%m-%d") # Перетворення рядка в об'єкт datetime
-print(get_days_from_today(datetime_object ))
+print(get_days_from_today(datetime_object )) # Виводим результат на екран
