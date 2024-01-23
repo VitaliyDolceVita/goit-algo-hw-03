@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-def get_days_from_today(date): # Визначаєм функцію
+def get_days_from_today(date): # Визначаєм функцію яка розраховує кількість днів між заданою датою і поточною датою.
     current_date = datetime.today() # Поточна дата
     return current_date.toordinal() - date.toordinal() # Розрахунок кількості днів
     
