@@ -1,13 +1,13 @@
-import random  #Імпортуємо модуль випадкових чисел
+import random  # Імпортуємо модуль випадкових чисел
 
 
-def get_numbers_ticket(a, b, c):  # Визначаєм функцію з трьома параметрами
+def get_numbers_ticket(min, max, quantity):  # Визначаєм функцію з трьома параметрами
     numbers = []  # Створюємо пустий список для зберігання номерів
-    for i in range(a, b+1, 1):  # Запускаємо цикл для генерації чисел
-        numbers.append(i)  # добавляєм число в список 
-    lnumbers = random.sample(numbers, c)  # берем  с кількість унікальних чисел 
-    lnumbers.sort()  # сортуємо числа
-    return  lnumbers  # повертаємо відсортовані числа
+    for i in range(min, max + 1, 1):  # Запускаємо цикл для генерації чисел
+        numbers.append(i)  # добавляєм число в список
+    selected_numbers = random.sample(numbers, quantity)  # берем  quantity-кількість унікальних чисел
+    selected_numbers.sort()  # сортуємо числа
+    return selected_numbers  # повертаємо відсортовані числа
 
 
 lottery_numbers = get_numbers_ticket(1, 49, 6)  # викликаємо функцію
