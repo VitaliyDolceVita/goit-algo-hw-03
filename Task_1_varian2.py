@@ -6,11 +6,6 @@ def get_days_from_today(date):  # Визначаєм функцію
     return current_date.toordinal() - date.toordinal()  # Повертаємо розрахунок кількості днів
 
 
-def get_days_from_today(date):  # Визначаєм функцію
-    current_date = datetime.today()  # Поточна дата
-    return current_date.toordinal() - date.toordinal()  # Повертаємо розрахунок кількості днів
-
-
 while True:
     date_string1 = input("Введіть дату у форматі 'РРРР-ММ-ДД' (наприклад: 2020-10-09)")  # Зчитуємо дату у вигляді рядка
     try:
