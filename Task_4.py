@@ -25,7 +25,7 @@ def get_upcoming_birthdays(users):  # Визначаєм функцію
             users_new.append(user)  # добавляєм словник в список
     return users_new  #  повертаєм Список привітань на цьому тижні
 
-users = [  # список влоників для прикладу
+users = [  # список cлоників для прикладу
     {"name": "John Wick", "birthday": "1985.01.29"},
     {"name": "Lara Croft", "birthday": "1990.01.01"},
     {"name": "John Doe", "birthday": "1985.01.28"},
