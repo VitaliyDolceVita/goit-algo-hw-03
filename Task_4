@@ -20,18 +20,17 @@ def get_upcoming_birthdays(users):  # Визначаєм функцію
             elif day_of_week == 6:  # Якщо це субота
                 future_date = birthday_this_year + timedelta(days=2)  # Додаємо 2 дня до  дати
                 birthday_this_year_str = future_date.strftime("%Y.%m.%d")  # переводим обьєкт часу в рядок
-            user.update({"congratulation_date": birthday_this_year_str})
-            user.pop("birthday")
-            users_new.append(user)  # добавляєм словник в список 
-    return users_new
+            user.update({"congratulation_date": birthday_this_year_str})   # створюєм ключ congratulation_date, дані якого у форматі рядка 'рік.місяць.дата'
+            user.pop("birthday")  # видаляєм ключ "birthday"
+            users_new.append(user)  # добавляєм словник в список
+    return users_new  #  повертаєм Список привітань на цьому тижні
 
-
-users = [
+users = [  # список влоників для прикладу
     {"name": "John Wick", "birthday": "1985.01.29"},
-    {"name": "Lara Croft", "birthday": "1990.01.31"},
+    {"name": "Lara Croft", "birthday": "1990.01.01"},
     {"name": "John Doe", "birthday": "1985.01.28"},
     {"name": "Jane Smith", "birthday": "1990.01.27"}
 ]
 
-upcoming_birthdays = get_upcoming_birthdays(users)
-print("Список привітань на цьому тижні:", upcoming_birthdays)
+upcoming_birthdays = get_upcoming_birthdays(users)  # викликаєм функцію і зберігаєм в змінній
+print("Список привітань на цьому тижні:", upcoming_birthdays)  # друкуєм список привітань
